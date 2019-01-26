@@ -44,4 +44,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentState: {fileID: 11400000, guid: 12e7fc60564226a4091adc8ad4c69ad5, type: 2}
-  ImageFader: {fileID: 0}
