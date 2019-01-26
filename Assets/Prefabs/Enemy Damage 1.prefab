@@ -74,6 +74,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamageAmount: 1
   ShakeMultiplier: 0.1
+  DestroyOnHit: 1
+  OnDestroy:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   DamageLayer:
     serializedVersion: 2
     m_Bits: 256

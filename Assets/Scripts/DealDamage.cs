@@ -1,10 +1,14 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DealDamage : MonoBehaviour
 {
     public int DamageAmount;
     public float ShakeMultiplier;
+    public bool DestroyOnHit;
+    public UnityEvent OnDestroy;
 
     public LayerMask DamageLayer;
 
@@ -32,5 +36,13 @@ public class DealDamage : MonoBehaviour
         print($"{name} hits {otherBody.name}. velocity={otherBody.velocity}");
 
         CameraShake.Shake(this, DamageAmount * ShakeMultiplier, .1f, otherBody.velocity.normalized);
+        if (DestroyOnHit)
+            Destroy();
+    }
+
+    private void Destroy()
+    {
+        OnDestroy.Invoke();
+        Destroy(gameObject);
     }
 }

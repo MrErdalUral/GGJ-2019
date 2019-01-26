@@ -14,7 +14,7 @@ public class Health : MonoBehaviour
     public void DealDamage(int amount)
     {
         CurrentHp -= amount;
-        if (CurrentHp < 0)
+        if (CurrentHp <= 0)
         {
             OnDeath.Invoke();
         }
