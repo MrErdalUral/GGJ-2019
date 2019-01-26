@@ -20,7 +20,6 @@ public class DealDamage : MonoBehaviour
         Debug.Log("knockback: " + body.velocity);
         otherBody.velocity = body.velocity *  2.5f;
 
-        Camera.main.GetComponent<CameraShake>()
-            .Shake(DamageAmount * ShakeMultiplier, .1f, body.velocity.normalized);
+        CameraShake.Shake(this, DamageAmount * ShakeMultiplier, .1f, body.velocity.normalized);
     }
 }

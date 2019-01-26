@@ -1,14 +1,14 @@
 using System.Collections;
 using UnityEngine;
 
-public class CameraShake : MonoBehaviour
+public static class CameraShake
 {
-    public void Shake(float magnitude, float duration, Vector2 direction)
+    public static void Shake(MonoBehaviour behavior, float magnitude, float duration, Vector2 direction)
     {
-        StartCoroutine(ShakeCoroutine(magnitude, duration, direction));
+        behavior.StartCoroutine(ShakeCoroutine(magnitude, duration, direction));
     }
 
-    private IEnumerator ShakeCoroutine(float magnitude, float duration, Vector2 direction)
+    private static IEnumerator ShakeCoroutine(float magnitude, float duration, Vector2 direction)
     {
         Camera.main.transform.Translate(direction * magnitude);
         yield return new WaitForSeconds(duration);
