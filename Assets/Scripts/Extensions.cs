@@ -12,6 +12,9 @@ public static class Extensions
     public static bool Approx(this float f, float other) => IsZero(f - other);
     public static bool Approx(this float f, float other, float epsilon) => IsZero(f - other, epsilon);
 
+    public static bool Approx(this Vector2 v, Vector2 t) => v.x.Approx(t.x) && v.y.Approx(t.y);
+    public static bool Approx(this Vector3 v, Vector3 t) => v.x.Approx(t.x) && v.y.Approx(t.y) && v.z.Approx(t.z);
+
     public static T GetOrAddComponent<T>(this GameObject self) where T : Component
     {
         var component = self.GetComponent<T>();

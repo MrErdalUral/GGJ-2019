@@ -25,9 +25,12 @@ public class DealDamage : MonoBehaviour
 
         _damageHistory.Add(otherBody);
 
-        Debug.Log("knockback: " + body.velocity);
-        otherBody.velocity = body.velocity *  2.5f;
+        otherBody.velocity = body.velocity * 2.5f;
+        if (otherBody.velocity.Approx(Vector2.zero))
+            otherBody.velocity = otherBody.transform.position - body.transform.position;
 
-        CameraShake.Shake(this, DamageAmount * ShakeMultiplier, .1f, body.velocity.normalized);
+        print($"{name} hits {otherBody.name}. velocity={otherBody.velocity}");
+
+        CameraShake.Shake(this, DamageAmount * ShakeMultiplier, .1f, otherBody.velocity.normalized);
     }
 }
