@@ -4,9 +4,9 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "GameState", menuName = "GameState")]
 public class GameState : ScriptableObject
 {
-    public UnityEvent OnEnabled;
-    public UnityEvent OnDisabled;
+    [SerializeField] private UnityEvent OnEnabled;
+    [SerializeField] public UnityEvent OnDisabled;
 
-    private void OnEnable() => OnEnabled.Invoke();
-    private void OnDisable() => OnDisabled.Invoke();
+    public void EnableState() => OnEnabled.Invoke();
+    public void DisableState() => OnDisabled.Invoke();
 }
