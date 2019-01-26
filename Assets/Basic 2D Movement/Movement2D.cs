@@ -27,7 +27,7 @@ public class Movement2D : MonoBehaviour
     void FixedUpdate()
     {
         var targetVelocity = Direction * MaxSpeed;
-        var timedBasedAcceleration = IsTimeUnscaled ? Time.unscaledDeltaTime : Time.deltaTime * Acceleration;
+        var timedBasedAcceleration = (IsTimeUnscaled ? Time.unscaledDeltaTime : Time.deltaTime) * Acceleration;
         if (timedBasedAcceleration > 1) timedBasedAcceleration = 1;
         var velocity = timedBasedAcceleration * targetVelocity + (1 - timedBasedAcceleration) * _rigidbody2D.velocity;
         _rigidbody2D.velocity = velocity;

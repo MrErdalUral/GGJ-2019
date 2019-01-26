@@ -693,11 +693,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4952595241886734032, guid: 153bab91e7c60b74ea74329365736e2a,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 4952595241886734037, guid: 153bab91e7c60b74ea74329365736e2a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -757,6 +752,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Acceleration
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952595241886734038, guid: 153bab91e7c60b74ea74329365736e2a,
+        type: 3}
+      propertyPath: MaxSpeed
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 153bab91e7c60b74ea74329365736e2a, type: 3}
