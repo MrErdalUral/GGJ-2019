@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 415823769}
   - component: {fileID: 57256430989352120}
   - component: {fileID: 5501996477167746600}
+  - component: {fileID: 155258991338057862}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -301,3 +302,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamageObjectPrefab: {fileID: 8048206825891655025, guid: eac34161570c67d4498ba8d32345960e,
     type: 3}
+--- !u!114 &155258991338057862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4952595241886734032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34fb9e62266544c58ef57843fb0bfb45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentHp: 2
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
