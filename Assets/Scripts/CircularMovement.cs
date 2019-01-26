@@ -15,6 +15,8 @@ public class CircularMovement : MonoBehaviour
 
     void Update()
     {
-        _body.velocity = Vector2.Perpendicular((Vector2)transform.position - (Vector2)PivotPos.position)*10 + _pivotBody.velocity;
+        var velocity = Vector2.Perpendicular((Vector2)transform.position - (Vector2)PivotPos.position)*10 + _pivotBody.velocity;
+        velocity /= Time.deltaTime;
+        _body.velocity = velocity;
     }
 }
