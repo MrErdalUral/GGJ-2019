@@ -238,11 +238,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4907930531642034719, guid: c2ab3df0a8440114395a8aa5d7832f7e,
-        type: 3}
-      propertyPath: DebugText
-      value: 
-      objectReference: {fileID: 409322471}
     - target: {fileID: 1001035951623076687, guid: c2ab3df0a8440114395a8aa5d7832f7e,
         type: 3}
       propertyPath: m_Name
@@ -303,6 +298,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4907930531642034719, guid: c2ab3df0a8440114395a8aa5d7832f7e,
+        type: 3}
+      propertyPath: DebugText
+      value: 
+      objectReference: {fileID: 409322471}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2ab3df0a8440114395a8aa5d7832f7e, type: 3}
 --- !u!1 &156776523
@@ -820,7 +820,7 @@ MonoBehaviour:
   AttackObjectPrefab: {fileID: 8048206825891655025, guid: a7115e8336f650f4baeda799c1c02616,
     type: 3}
   AttackDirection: {x: 0, y: 0}
-  AttackMovementSpeed: 25
+  AttackMovementSpeed: 30
 --- !u!114 &1482068909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -833,11 +833,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b41c693b8caa844da2a15db5f21bf18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackRange: 4
+  AttackRange: 3
   AttackDelay: 1
   OnAttackStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1482068906}
+        m_MethodName: QuickStopMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   OnAttack:
