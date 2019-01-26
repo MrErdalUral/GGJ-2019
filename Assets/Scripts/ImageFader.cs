@@ -41,4 +41,10 @@ public class ImageFader : MonoBehaviour
             yield return null;
         }
     }
+
+    [NaughtyAttributes.Button("Fade to black")]
+    public void FadeFore1() => FadeToAlpha(.3f, 1);
+
+    [NaughtyAttributes.Button("Fade to transparent")]
+    public void FadeFore0() => FadeToAlpha(.3f, 0);
 }
