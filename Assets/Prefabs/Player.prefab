@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 415823769}
   - component: {fileID: 57256430989352120}
   - component: {fileID: 5501996477167746600}
+  - component: {fileID: 4406542404358995188}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -199,7 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxSpeed: 10
-  Acceleration: 5
+  Acceleration: 10
   IsTimeUnscaled: 1
 --- !u!114 &4952595241886734033
 MonoBehaviour:
@@ -301,3 +302,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DamageObjectPrefab: {fileID: 8048206825891655025, guid: eac34161570c67d4498ba8d32345960e,
     type: 3}
+  AttackTime: 0.25
+--- !u!70 &4406542404358995188
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4952595241886734032}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.25}
+  m_Size: {x: 1, y: 0.5}
+  m_Direction: 1
