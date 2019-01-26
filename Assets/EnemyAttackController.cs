@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Assets.Input_Handlers;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,7 +8,7 @@ using UnityEngine.Events;
 public class EnemyAttackController : MonoBehaviour
 {
     private EnemyAttack _enemyAttack;
-    private float _attackCooldown = 3f;
+    private float _attackCooldown = 0;
 
     public float AttackRange = 10f;
     public float AttackDelay = .5f;

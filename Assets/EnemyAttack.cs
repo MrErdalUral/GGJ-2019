@@ -11,6 +11,7 @@ public class EnemyAttack : MonoBehaviour
 
     public Vector2 AttackDirection;
     public float AttackMovementSpeed = 10f;
+    public float ProjectileSpeed = 100f;
 
     void Awake()
     {
@@ -28,6 +29,13 @@ public class EnemyAttack : MonoBehaviour
             _body.velocity = AttackDirection.normalized * AttackMovementSpeed;
             Destroy(atkObj, 0.25f);
 
+        }
+        else if (AttackType == EnemyAttackType.Ranged)
+        {
+            var atkObj = Instantiate(AttackObjectPrefab, transform.position + (Vector3)AttackDirection.normalized,
+                Quaternion.identity);
+            atkObj.AddComponent<ObjectScaler>();
+            atkObj.GetComponent<Rigidbody2D>().velocity = AttackDirection.normalized * ProjectileSpeed;
         }
     }
 }

@@ -34,11 +34,11 @@ public class EnemyMovementController : MonoBehaviour
         _cooldown = 1f;
     }
 
-    public void QuickStopMovement()
+    public void TimedStopMovement()
     {
         _movement.SetDirection(Vector2.zero);
 
-        _cooldown = .5f;
+        _cooldown = 1f;
     }
 }
 
