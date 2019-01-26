@@ -3,12 +3,18 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameState CurrentState;
+    [SerializeField] private GameState _currentState;
+    public GameState CurrentState
+    {
+        get { return _currentState;}
+        private set { _currentState = value; }
+    }
+
     private GameState _initialState;
 
     private ImageFader _imageFader;
 
-    public static GameManager Instance;
+    public static GameManager Instance { get; private set; }
 
     private void Awake()
     {
