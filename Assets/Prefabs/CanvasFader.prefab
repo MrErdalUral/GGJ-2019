@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1863041450585143748}
   - component: {fileID: 1863041450585143747}
   - component: {fileID: 3489836512295132790}
+  - component: {fileID: 3310918808948164280}
   m_Layer: 5
   m_Name: CanvasFader
   m_TagString: Untagged
@@ -87,4 +88,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00f8bf3a4afd4e159d3476f39de79ce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanvasFader: {fileID: 1863041450585143747}
+  CanvasImage: {fileID: 0}
+--- !u!114 &3310918808948164280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863041450585143745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a83c75f643dc4e8f8a95fa0c1fdc16f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BackgroundDreamStart: {fileID: 21300000, guid: e686787ff17689f49babb1bacea229dc,
+    type: 3}
+  BackgroundDreamEnd: {fileID: 21300000, guid: b2e5ced03f356034897e8f310b976daa, type: 3}
+  CanvasImage: {fileID: 0}

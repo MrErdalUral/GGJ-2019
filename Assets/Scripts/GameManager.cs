@@ -1,18 +1,57 @@
+using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameState _currentState;
-    public GameState CurrentState
+    public float TimeScale;
+
+    [SerializeField] private GameStates _currentState;
+
+    public GameStates CurrentState
     {
-        get { return _currentState;}
-        private set { _currentState = value; }
+        get { return _currentState; }
+        private set
+        {
+            _currentState = value;
+
+            switch (value)
+            {
+                case GameStates.None:
+                    break;
+                case GameStates.Menu:
+                    OnMenu();
+                    break;
+                case GameStates.Play:
+                    OnPlay();
+                    break;
+                case GameStates.Pause:
+                    OnPause();
+                    break;
+                case GameStates.DreamStart:
+                    OnDreamStart();
+                    break;
+                case GameStates.DreamEnd:
+                    OnDreamEnd();
+                    break;
+                case GameStates.Epilogue:
+                    OnEpilogue();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(value), value, null);
+            }
+        }
     }
 
-    private GameState _initialState;
-
     public static GameManager Instance { get; private set; }
+
+    public delegate void GameStateChange();
+
+    public event GameStateChange OnMenu = () => { };
+    public event GameStateChange OnDreamStart = () => { };
+    public event GameStateChange OnPlay = () => { };
+    public event GameStateChange OnDreamEnd = () => { };
+    public event GameStateChange OnPause = () => { };
+    public event GameStateChange OnEpilogue = () => { };
 
     private void Awake()
     {
@@ -23,16 +62,25 @@ public class GameManager : MonoBehaviour
         }
 
         Instance = this;
-        _initialState = CurrentState;
-        CurrentState.EnableState();
+
+        Time.timeScale = 0;
+        OnDreamStart += () =>
+        {
+            Time.timeScale = 0;
+            var cor = CommonCoroutines.DelayedActionRealtime(2, () => Instance.SetState(GameStates.Play));
+            Instance.StartCoroutine(cor);
+        };
+        OnPlay += () =>
+        {
+            Time.timeScale = Instance.TimeScale;
+        };
+
+        var coroutine = CommonCoroutines.DelayedActionRealtime(2, () => Instance.SetState(GameStates.DreamStart));
+        StartCoroutine(coroutine);
     }
 
-    private void OnApplicationQuit() => CurrentState = _initialState;
-
-    public void SetState(GameState nextState)
+    public void SetState(GameStates nextState)
     {
-        CurrentState.DisableState();
         CurrentState = nextState;
-        CurrentState.EnableState();
     }
 }

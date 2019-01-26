@@ -30,7 +30,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 5578039958552998710}
+  - {fileID: 1126235093775061386}
   - {fileID: 5578039958306278552}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 2, y: -3}
   m_UseGraphicAlpha: 1
---- !u!1001 &6103494177852017396
+--- !u!1001 &1620146386005534792
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -316,9 +316,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d843158f6dd28fc4b999e1c4b4b10ee1, type: 3}
---- !u!224 &5578039958552998710 stripped
+--- !u!224 &1126235093775061386 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1863041450585143746, guid: d843158f6dd28fc4b999e1c4b4b10ee1,
     type: 3}
-  m_PrefabInstance: {fileID: 6103494177852017396}
+  m_PrefabInstance: {fileID: 1620146386005534792}
   m_PrefabAsset: {fileID: 0}
