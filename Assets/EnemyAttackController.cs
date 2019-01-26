@@ -10,7 +10,7 @@ public class EnemyAttackController : MonoBehaviour
     private float _attackCooldown = 3f;
 
     public float AttackRange = 10f;
-    public float AttackDelay = 1f;
+    public float AttackDelay = .5f;
 
     public UnityEvent OnAttackStart;
     public UnityEvent OnAttack;
@@ -38,8 +38,8 @@ public class EnemyAttackController : MonoBehaviour
         OnAttackStart.Invoke();
         _attackCooldown = 3f;
         yield return new WaitForSeconds(AttackDelay);
+        _enemyAttack.Attack();
         OnAttack.Invoke();
         
-        _enemyAttack.Attack();
     }
 }
