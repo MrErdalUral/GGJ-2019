@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class ImageFader : MonoBehaviour
 {
-    public Image CanvasFader;
+    public Image CanvasImage;
     private IEnumerator _currentCoroutine;
 
     public void FadeToAlpha(float duration, float targetAlpha)
@@ -16,29 +16,22 @@ public class ImageFader : MonoBehaviour
         StartCoroutine(_currentCoroutine);
     }
 
-    public void SetVisible() => CanvasFader.color = CanvasFader.color.WithAlpha(1);
-    public void SetInvisible() => CanvasFader.color = CanvasFader.color.WithAlpha(0);
-
-    public void SetImageSprite(Sprite sprite)
-    {
-        Logger.Instance.Log($"Set sprite to {sprite.name}");
-        CanvasFader.sprite = sprite;
-    }
-
-    public void ResetImageSprite()
-    {
-        Logger.Instance.Log("Reset sprite");
-        CanvasFader.sprite = null;
-    }
+    public void SetAlpha1() => CanvasImage.color = CanvasImage.color.WithAlpha(1);
+    public void SetAlpha0() => CanvasImage.color = CanvasImage.color.WithAlpha(0);
 
     private IEnumerator FadeCoroutine(float duration, float targetAlpha)
     {
-        while (!CanvasFader.color.a.Approx(targetAlpha))
+        while (!CanvasImage.color.a.Approx(targetAlpha))
         {
-            var deltaAlpha = Time.unscaledDeltaTime * (targetAlpha - CanvasFader.color.a) / duration;
-            CanvasFader.color = CanvasFader.color.AddAlpha(deltaAlpha);
+            var deltaAlpha = Time.unscaledDeltaTime * (targetAlpha - CanvasImage.color.a) / duration;
+            CanvasImage.color = CanvasImage.color.AddAlpha(deltaAlpha);
             yield return null;
         }
+    }
+
+    private void OnEnable()
+    {
+        CanvasImage = GetComponent<Image>();
     }
 
     [NaughtyAttributes.Button("Fade to black")]

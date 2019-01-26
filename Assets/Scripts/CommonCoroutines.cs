@@ -9,4 +9,10 @@ public static class CommonCoroutines
         yield return new WaitForSeconds(delay);
         action();
     }
+
+    public static IEnumerator DelayedActionRealtime(float delay, Action action)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+        action();
+    }
 }
