@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DealDamage : MonoBehaviour
@@ -7,6 +8,10 @@ public class DealDamage : MonoBehaviour
 
     public LayerMask DamageLayer;
 
+    private HashSet<Rigidbody2D> _damageHistory;
+
+    private void Start() => _damageHistory = new HashSet<Rigidbody2D>();
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         var otherLayer = 1 << other.gameObject.layer;
@@ -15,7 +20,10 @@ public class DealDamage : MonoBehaviour
         other.gameObject.GetComponent<Health>().DealDamage(DamageAmount);
         var otherBody = other.GetComponent<Rigidbody2D>();
         var body = GetComponent<Rigidbody2D>();
-        if (!otherBody || !body) return;
+        if (!otherBody || !body
+                       || _damageHistory.Contains(otherBody)) return;
+
+        _damageHistory.Add(otherBody);
 
         Debug.Log("knockback: " + body.velocity);
         otherBody.velocity = body.velocity *  2.5f;
