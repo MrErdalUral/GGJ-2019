@@ -516,6 +516,22 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  OnHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1482068906}
+        m_MethodName: StopMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!70 &1482068903
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -544,7 +560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3479fa15da6bfb45b2d734b6bcec5a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxSpeed: 1
+  MaxSpeed: 2
   Acceleration: 10
   IsTimeUnscaled: 0
 --- !u!50 &1482068905
@@ -580,6 +596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 480b2e68b0e44f44498d7280e53dc35d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MovementType: 0
 --- !u!1 &2073767989
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,11 +693,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4952595241886734032, guid: 153bab91e7c60b74ea74329365736e2a,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 4952595241886734037, guid: 153bab91e7c60b74ea74329365736e2a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -735,6 +747,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952595241886734038, guid: 153bab91e7c60b74ea74329365736e2a,
+        type: 3}
+      propertyPath: Acceleration
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952595241886734038, guid: 153bab91e7c60b74ea74329365736e2a,
+        type: 3}
+      propertyPath: MaxSpeed
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 153bab91e7c60b74ea74329365736e2a, type: 3}
