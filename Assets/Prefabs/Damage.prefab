@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamageAmount: 2
+  ShakeMultiplier: 0.05
   DamageLayer:
     serializedVersion: 2
     m_Bits: 768

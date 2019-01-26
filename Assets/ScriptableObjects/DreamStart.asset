@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3849e3b62a84889b238880bc028fb66, type: 3}
   m_Name: DreamStart
   m_EditorClassIdentifier: 
+  Delay: 2
   OnEnabled:
     m_PersistentCalls:
       m_Calls:
@@ -42,6 +43,24 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: DreamStart.OnDisable
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnDelayedAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 776971611958720055, guid: 0cac9a52b116a4249b52202860d00fb6,
+          type: 3}
+        m_MethodName: SetState
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 52311d7a30c51154caed9d43695e818a,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: GameState, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,

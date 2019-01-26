@@ -4,8 +4,26 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public GameState CurrentState;
+    private GameState _initialState;
 
     private ImageFader _imageFader;
+
+    public static GameManager Instance;
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        _initialState = CurrentState;
+        CurrentState.EnableState();
+    }
+
+    private void OnApplicationQuit() => CurrentState = _initialState;
 
     public void SetState(GameState nextState)
     {

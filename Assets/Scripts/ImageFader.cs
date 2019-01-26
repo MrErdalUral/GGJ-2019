@@ -16,9 +16,21 @@ public class ImageFader : MonoBehaviour
         StartCoroutine(_currentCoroutine);
     }
 
-    public void SetImageSprite(Sprite sprite) => CanvasFader.sprite = sprite;
+    public void SetVisible() => CanvasFader.color = CanvasFader.color.WithAlpha(1);
+    public void SetInvisible() => CanvasFader.color = CanvasFader.color.WithAlpha(0);
 
-    public void ResetImageSprite() => CanvasFader.sprite = null;
+    public void SetImageSprite(Sprite sprite)
+    {
+        print($"Set sprite to {sprite.name}");
+        CanvasFader = Instantiate(CanvasFader);
+        CanvasFader.sprite = sprite;
+    }
+
+    public void ResetImageSprite()
+    {
+        print($"Reset sprite");
+        CanvasFader.sprite = null;
+    }
 
     private IEnumerator FadeCoroutine(float duration, float targetAlpha)
     {

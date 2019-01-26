@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3849e3b62a84889b238880bc028fb66, type: 3}
   m_Name: Play
   m_EditorClassIdentifier: 
+  Delay: 0
   OnEnabled:
     m_PersistentCalls:
       m_Calls:
@@ -44,5 +45,10 @@ MonoBehaviour:
           m_StringArgument: Play.OnDisable
           m_BoolArgument: 0
         m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnDelayedAction:
+    m_PersistentCalls:
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
