@@ -9,12 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8048206825891655029}
-  - component: {fileID: 8048206825891655028}
   - component: {fileID: 8048206825891655031}
   - component: {fileID: 8048206825891655034}
   - component: {fileID: 1238853140905407823}
   m_Layer: 0
-  m_Name: Damage
+  m_Name: Enemy Damage 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,27 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &8048206825891655028
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8048206825891655025}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!61 &8048206825891655031
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -93,11 +71,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a23c17156df8e42a43a7f9083a4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageAmount: 2
+  DamageAmount: 1
   ShakeMultiplier: 0.05
   DamageLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 256
 --- !u!212 &1238853140905407823
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -136,7 +114,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 05d7d20cc1225c845983a3a427caf2da, type: 3}
-  m_Color: {r: 0.9716981, g: 0.9485107, b: 0.050418302, a: 1}
+  m_Color: {r: 0.972549, g: 0.0509804, b: 0.96936, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class EnemyAttackController : MonoBehaviour
 {
     private EnemyAttack _enemyAttack;
+    private float _attackCooldown = 3f;
 
     public float AttackRange = 10f;
     public float AttackDelay = 1f;
@@ -21,6 +22,8 @@ public class EnemyAttackController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _attackCooldown -= Time.deltaTime;
+        if(_attackCooldown > 0) return;
         _enemyAttack.AttackDirection =
             GameObject.FindGameObjectWithTag("Player").transform.position - transform.position;
         if (AttackRange > _enemyAttack.AttackDirection.magnitude)
@@ -33,8 +36,10 @@ public class EnemyAttackController : MonoBehaviour
     private IEnumerator AttackRoutine()
     {
         OnAttackStart.Invoke();
+        _attackCooldown = 3f;
         yield return new WaitForSeconds(AttackDelay);
         OnAttack.Invoke();
+        
         _enemyAttack.Attack();
     }
 }

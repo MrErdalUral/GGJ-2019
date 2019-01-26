@@ -32,7 +32,7 @@ public class Movement2D : MonoBehaviour
         if (timedBasedAcceleration > 1) timedBasedAcceleration = 1;
         var velocity = timedBasedAcceleration * targetVelocity + (1 - timedBasedAcceleration) * _rigidbody2D.velocity;
         if (!IsTimeUnscaled)
-            velocity /= Time.deltaTime;
+            velocity /= Time.timeScale;
         _rigidbody2D.velocity = velocity;
     }
 

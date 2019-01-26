@@ -7,6 +7,7 @@ public class EnemyAttack : MonoBehaviour
     private Rigidbody2D _body;
 
     public EnemyAttackType AttackType = EnemyAttackType.Melee;
+    public GameObject AttackObjectPrefab;
 
     public Vector2 AttackDirection;
     public float AttackMovementSpeed = 10f;
@@ -21,7 +22,12 @@ public class EnemyAttack : MonoBehaviour
     {
         if (AttackType == EnemyAttackType.Melee)
         {
+            var atkObj = Instantiate(AttackObjectPrefab, transform.position + (Vector3)AttackDirection.normalized,
+                Quaternion.identity);
+            atkObj.transform.parent = transform;
             _body.velocity = AttackDirection.normalized * AttackMovementSpeed;
+            Destroy(atkObj, 0.25f);
+
         }
     }
 }

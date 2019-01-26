@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34fb9e62266544c58ef57843fb0bfb45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentHp: 2
+  CurrentHp: 10
   OnDeath:
     m_PersistentCalls:
       m_Calls:
