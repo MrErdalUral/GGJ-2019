@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1a23c17156df8e42a43a7f9083a4f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageAmount: 2
+  DamageAmount: 1
   ShakeMultiplier: 0.05
   DamageLayer:
     serializedVersion: 2

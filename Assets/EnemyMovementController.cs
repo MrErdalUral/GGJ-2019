@@ -8,6 +8,7 @@ public class EnemyMovementController : MonoBehaviour
     private Movement2D _movement;
     public EnemyMovementType MovementType = EnemyMovementType.chase;
     private float _cooldown;
+    public float AvoidDistance = 10f;
 
     void Awake()
     {
@@ -22,8 +23,10 @@ public class EnemyMovementController : MonoBehaviour
             return;
         var player = GameObject.FindGameObjectWithTag("Player");
         var dir = (player.transform.position-transform.position).normalized;
-        if (MovementType == EnemyMovementType.avoid)
+        if (MovementType == EnemyMovementType.avoid && AvoidDistance > (GameObject.FindGameObjectWithTag("Player").transform.position-transform.position).magnitude)
+        {
             dir = -dir;
+        }
         _movement.SetDirection(dir);
     }
 

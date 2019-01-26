@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 5501996477167746600}
   - component: {fileID: 155258991338057862}
   - component: {fileID: 1225606599}
+  - component: {fileID: 1225606590}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -200,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3479fa15da6bfb45b2d734b6bcec5a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxSpeed: 5
+  MaxSpeed: 7
   Acceleration: 10
   IsTimeUnscaled: 1
 --- !u!114 &4952595241886734033
@@ -321,12 +322,12 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
+      - m_Target: {fileID: 1225606590}
+        m_MethodName: Death
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -336,9 +337,21 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   OnHit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 155258991338057862}
+        m_MethodName: BecomeGhost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  EtherialTime: 1
 --- !u!114 &1225606599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,5 +362,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79b002b3ec064aa4fa068d6c38e551e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1225606590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4952595241886734032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74b49950d92761d44964d8265cfe6b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

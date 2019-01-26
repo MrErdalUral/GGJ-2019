@@ -36,6 +36,8 @@ public class EnemyAttack : MonoBehaviour
                 Quaternion.identity);
             atkObj.AddComponent<ObjectScaler>();
             atkObj.GetComponent<Rigidbody2D>().velocity = AttackDirection.normalized * ProjectileSpeed;
+            Destroy(atkObj, 10f);
+
         }
     }
 }

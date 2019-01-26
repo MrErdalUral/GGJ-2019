@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34fb9e62266544c58ef57843fb0bfb45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentHp: 100
+  CurrentHp: 3
   OnDeath:
     m_PersistentCalls:
       m_Calls:
@@ -185,6 +185,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  EtherialTime: 0
 --- !u!114 &1941633881565096701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,6 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementType: 0
+  AvoidDistance: 10
 --- !u!114 &1941633881565096692
 MonoBehaviour:
   m_ObjectHideFlags: 0
