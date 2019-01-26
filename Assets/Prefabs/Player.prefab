@@ -93,7 +93,8 @@ GameObject:
   - component: {fileID: 4952595241886734038}
   - component: {fileID: 4952595241886734033}
   - component: {fileID: 415823769}
-  - component: {fileID: 3037879707423475596}
+  - component: {fileID: 57256430989352120}
+  - component: {fileID: 5501996477167746600}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -226,6 +227,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5501996477167746600}
+        m_MethodName: SetDirection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: Assets.Input_Handlers.Vector2UnityEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   HorizontalInput: Horizontal
@@ -246,7 +258,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.25}
   m_Size: {x: 1, y: 0.5}
   m_Direction: 1
---- !u!114 &3037879707423475596
+--- !u!114 &57256430989352120
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -255,12 +267,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 4952595241886734032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34fb9e62266544c58ef57843fb0bfb45, type: 3}
+  m_Script: {fileID: 11500000, guid: 650d150ab0dfb5e4eae34cd85b48440c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentHp: 2
-  OnDeath:
+  ButtonAction:
     m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      m_Calls:
+      - m_Target: {fileID: 5501996477167746600}
+        m_MethodName: MeleeAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: Assets.Input_Handlers.ButtonUnityEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  InputName: Fire1
+--- !u!114 &5501996477167746600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4952595241886734032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b96b23974bcca44c8a905c9bbf0e428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageObjectPrefab: {fileID: 8048206825891655025, guid: eac34161570c67d4498ba8d32345960e,
+    type: 3}
