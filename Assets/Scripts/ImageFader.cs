@@ -21,14 +21,13 @@ public class ImageFader : MonoBehaviour
 
     public void SetImageSprite(Sprite sprite)
     {
-        print($"Set sprite to {sprite.name}");
-        CanvasFader = Instantiate(CanvasFader);
+        Logger.Instance.Log($"Set sprite to {sprite.name}");
         CanvasFader.sprite = sprite;
     }
 
     public void ResetImageSprite()
     {
-        print($"Reset sprite");
+        Logger.Instance.Log("Reset sprite");
         CanvasFader.sprite = null;
     }
 
