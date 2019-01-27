@@ -51,7 +51,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.83, y: 0.69}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -80,6 +80,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  ShowSprite: 0
+  AttackSprites:
+  - {fileID: 21300000, guid: 0380dfcf9b803f24bb6a4515c725812f, type: 3}
+  - {fileID: 21300000, guid: 5543c2a5bdacf0b40aab40aad12c2793, type: 3}
   DamageLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -120,8 +124,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 05d7d20cc1225c845983a3a427caf2da, type: 3}
-  m_Color: {r: 0.972549, g: 0.0509804, b: 0.96936, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 0380dfcf9b803f24bb6a4515c725812f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

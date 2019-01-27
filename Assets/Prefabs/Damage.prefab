@@ -101,6 +101,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  ShowSprite: 1
+  AttackSprites:
+  - {fileID: 21300000, guid: e5faec26caf8a124b86dfca586d48fb5, type: 3}
   DamageLayer:
     serializedVersion: 2
     m_Bits: 512
