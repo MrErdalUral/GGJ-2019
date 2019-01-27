@@ -58,4 +58,9 @@ public class BossController : MonoBehaviour
         }
         _attackCooldown = AttackCooldownTime;
     }
+
+    private void DoScreenShake()
+    {
+        CameraShake.Shake(this, 1, .05f, Vector2.down);
+    }
 }

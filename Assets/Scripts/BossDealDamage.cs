@@ -30,7 +30,7 @@ public class BossDealDamage : MonoBehaviour
 
         //print($"{name} hits {otherBody.name}. velocity={otherBody.velocity}");
 
-        CameraShake.Shake(this, 2, .1f, otherBody.velocity.normalized);
+        CameraShake.Shake(this, 1, .05f, otherBody.velocity.normalized);
         if (DestroyOnHit)
             Destroy();
     }
