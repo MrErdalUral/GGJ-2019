@@ -44,3 +44,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BossArm
+    uniqueID: 2515346671
+    locked: 0

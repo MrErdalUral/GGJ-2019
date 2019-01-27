@@ -168,6 +168,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3316355872432380026}
   - component: {fileID: 156790312951279464}
+  - component: {fileID: 909620756}
+  - component: {fileID: 909620755}
   m_Layer: 0
   m_Name: Hand2Open
   m_TagString: Untagged
@@ -223,8 +225,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1779620625
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 43cf19070b63e2348a33900a6392ebe7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -237,6 +239,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &909620756
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097201099047977674}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.07, y: 3.99}
+    newSize: {x: 4.07, y: 3.99}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.07, y: 3.99}
+  m_EdgeRadius: 0
+--- !u!114 &909620755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097201099047977674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3cdca1f8a163e149a3fbc1f072fea68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageAmount: 2
+  ShakeMultiplier: 1
+  DestroyOnHit: 0
+  OnDestroy:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  DamageLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &1443755961113783822
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,8 +353,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1779620625
+  m_SortingLayer: 1
   m_SortingOrder: -17
   m_Sprite: {fileID: 21300006, guid: 43cf19070b63e2348a33900a6392ebe7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -383,8 +434,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1779620625
+  m_SortingLayer: 1
   m_SortingOrder: -18
   m_Sprite: {fileID: 21300004, guid: 43cf19070b63e2348a33900a6392ebe7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -671,6 +722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e43080db4a823ff46b2eee8e8fb6bc0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AttackCooldownTime: 1
 --- !u!1 &5882421203687679315
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,6 +817,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3136655679455586745}
   - component: {fileID: 2551848441921764969}
+  - component: {fileID: 303408420}
+  - component: {fileID: 303408419}
   m_Layer: 0
   m_Name: HandOpen
   m_TagString: Untagged
@@ -820,8 +874,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1779620625
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 43cf19070b63e2348a33900a6392ebe7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -834,6 +888,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &303408420
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5996123052123301943}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.07, y: 3.99}
+    newSize: {x: 4.07, y: 3.99}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.07, y: 3.99}
+  m_EdgeRadius: 0
+--- !u!114 &303408419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5996123052123301943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3cdca1f8a163e149a3fbc1f072fea68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageAmount: 2
+  ShakeMultiplier: 1
+  DestroyOnHit: 0
+  OnDestroy:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  DamageLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &6197325925724618206
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,7 +1042,7 @@ Transform:
   m_GameObject: {fileID: 6646003741341907048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.19, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 201750172025023018}
   m_Father: {fileID: 0}
@@ -1010,8 +1113,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1779620625
+  m_SortingLayer: 1
   m_SortingOrder: -17
   m_Sprite: {fileID: 21300006, guid: 43cf19070b63e2348a33900a6392ebe7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1409,8 +1512,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1779620625
+  m_SortingLayer: 1
   m_SortingOrder: -18
   m_Sprite: {fileID: 21300004, guid: 43cf19070b63e2348a33900a6392ebe7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
