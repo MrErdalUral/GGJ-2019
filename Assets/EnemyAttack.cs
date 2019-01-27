@@ -25,6 +25,7 @@ public class EnemyAttack : MonoBehaviour
         {
             var atkObj = Instantiate(AttackObjectPrefab, transform.position + (Vector3)AttackDirection.normalized,
                 Quaternion.identity);
+            atkObj.GetComponent<DealDamage>().ShowSprite = false;
             atkObj.transform.parent = transform;
             _body.velocity = AttackDirection.normalized * AttackMovementSpeed;
             Destroy(atkObj, 0.25f);
@@ -34,6 +35,7 @@ public class EnemyAttack : MonoBehaviour
         {
             var atkObj = Instantiate(AttackObjectPrefab, transform.position + (Vector3)AttackDirection.normalized,
                 Quaternion.identity);
+            atkObj.GetComponent<DealDamage>().ShowSprite = true;
             atkObj.AddComponent<ObjectScaler>();
             atkObj.GetComponent<Rigidbody2D>().velocity = AttackDirection.normalized * ProjectileSpeed;
             Destroy(atkObj, 10f);

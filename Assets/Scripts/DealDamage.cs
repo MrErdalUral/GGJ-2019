@@ -9,12 +9,24 @@ public class DealDamage : MonoBehaviour
     public float ShakeMultiplier;
     public bool DestroyOnHit;
     public UnityEvent OnDestroy;
+    public bool ShowSprite = false;
+    public Sprite[] AttackSprites;
 
     public LayerMask DamageLayer;
 
     private HashSet<Rigidbody2D> _damageHistory;
 
-    private void Start() => _damageHistory = new HashSet<Rigidbody2D>();
+    private void Start()
+    {
+        var sprite = GetComponent<SpriteRenderer>();
+        if (!ShowSprite)
+            sprite.enabled = false;
+        else
+        {
+            sprite.sprite = AttackSprites[Random.Range(0, AttackSprites.Length)];
+        }
+        _damageHistory = new HashSet<Rigidbody2D>();
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
