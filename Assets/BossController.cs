@@ -27,17 +27,28 @@ public class BossController : MonoBehaviour
 
     private void Attack()
     {
+        var player = GameObject.FindGameObjectWithTag("Player");
+        if (!player) return;
+
         var attackType = Random.Range(0, 4);
+        if (player.transform.position.x > 0)
+        {
+            attackType = Random.Range(2, 4);
+        }
+        else
+        {
+            attackType = Random.Range(0, 2);
+        }
         switch (attackType)
         {
             case 0:
                 _animator.SetTrigger("Attack1");
                 break;
             case 1:
-                _animator.SetTrigger("Attack2");
+                _animator.SetTrigger("Attack1Left");
                 break;
             case 2:
-                _animator.SetTrigger("Attack1Left");
+                _animator.SetTrigger("Attack2");
                 break;
             case 3:
                 _animator.SetTrigger("Attack2Right");
