@@ -24,6 +24,7 @@ public class EnemyMovementController : MonoBehaviour
         var player = GameObject.FindGameObjectWithTag("Player");
         if(!player) return;
         var dir = (player.transform.position-transform.position).normalized;
+        transform.localScale = new Vector3(-Mathf.Sign(dir.x),1,1);
         if (MovementType == EnemyMovementType.avoid && AvoidDistance > (GameObject.FindGameObjectWithTag("Player").transform.position-transform.position).magnitude)
         {
             dir = -dir;
