@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public static class Extensions
@@ -38,5 +39,11 @@ public static class Extensions
             throw new ArgumentException("Collection must not be empty.");
 
         return array[UnityEngine.Random.Range(0, array.Length)];
-}
+    }
+
+    public static IEnumerable<Transform> GetChildrenEnumerable(this Transform self)
+    {
+        for (var i = 0; i < self.childCount; i++)
+            yield return self.GetChild(i);
+    }
 }

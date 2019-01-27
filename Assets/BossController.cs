@@ -30,6 +30,25 @@ public class BossController : MonoBehaviour
         if (_attackCooldown < 0)
             Attack();
 
+        if (BossHealth < 1)
+        {
+            SceneHelper.LoadStatic("EndWin");
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        var otherLayer = 1 << other.gameObject.layer;
+
+        var damage = other.GetComponent<DealDamage>();
+        if ((otherLayer & damage.DamageLayer) != otherLayer) return;
+
+        BossHealth -= damage.DamageAmount;
+
+        if (BossHealth <= 0)
+        {
+            SceneHelper.LoadStatic("EndWin");
+        }
     }
 
     private void Attack()
