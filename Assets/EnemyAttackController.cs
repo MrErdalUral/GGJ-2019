@@ -10,6 +10,7 @@ public class EnemyAttackController : MonoBehaviour
     private EnemyAttack _enemyAttack;
     private float _attackCooldown = 0;
 
+    public Animator Animator;
     public float AttackRange = 10f;
     public float AttackDelay = .5f;
 
@@ -29,6 +30,7 @@ public class EnemyAttackController : MonoBehaviour
         if(!playerObject) return;
         _enemyAttack.AttackDirection =
             playerObject.transform.position - transform.position;
+        transform.localScale = new Vector3(-Mathf.Sign(_enemyAttack.AttackDirection.x), 1, 1);
         if (AttackRange > _enemyAttack.AttackDirection.magnitude)
         {
             StartCoroutine(AttackRoutine());
@@ -38,9 +40,11 @@ public class EnemyAttackController : MonoBehaviour
 
     private IEnumerator AttackRoutine()
     {
+        Animator.SetTrigger("AttackStart");
         OnAttackStart.Invoke();
         _attackCooldown = 3f;
         yield return new WaitForSeconds(AttackDelay);
+        Animator.SetTrigger("Attack");
         _enemyAttack.Attack();
         OnAttack.Invoke();
         

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Anima2D;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
@@ -7,7 +8,7 @@ public class PlayerAttack : MonoBehaviour
     public GameObject DamageObjectPrefab;
     public float AttackTime = 0.25f;
     public float AttackMovementSpeed = 5;
-
+    public Animator Animator;
     private Vector2 _direction;
     private GameObject _attackObject;
     private Rigidbody2D _body;
@@ -28,6 +29,8 @@ public class PlayerAttack : MonoBehaviour
         _body = GetComponent<Rigidbody2D>();
     }
 
+    
+
     public void SetDirection(Vector2 dir)
     {
         if(dir == Vector2.zero) return;
@@ -40,6 +43,7 @@ public class PlayerAttack : MonoBehaviour
         _startPos = -Vector2.Perpendicular(Direction);
         _endPos = -_startPos;
         Debug.Log("Attack Direction" + Direction);
+        Animator.SetTrigger("Attack");
         _attackObject = Instantiate(DamageObjectPrefab, transform.position + (Vector3)_startPos, Quaternion.identity,transform);
         var circularMovement = _attackObject.AddComponent<CircularMovement>();
         circularMovement.EndPos = _endPos;
