@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4337693088993830696}
   - component: {fileID: 5408939017823737217}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 3366306261186352157}
   - component: {fileID: 6043078091625417844}
   - component: {fileID: 1415367763}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EyeL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 156790312951279464}
   - component: {fileID: 909620756}
   - component: {fileID: 909620755}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hand2Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2507846319504421682}
   - component: {fileID: 2269964939686784693}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hand2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -391,7 +391,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1105855710867650357}
   - component: {fileID: 6293834554462950846}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm2Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -472,7 +472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2617933804383830970}
   - component: {fileID: 7233748604931564460}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MouthAngry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5217064669549822463}
   - component: {fileID: 4136700608025397511}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EyeWhiteR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -634,7 +634,7 @@ GameObject:
   - component: {fileID: 3310123548307582937}
   - component: {fileID: 1981429545273436333}
   - component: {fileID: 913795875}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -765,7 +765,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5132442142722756981}
   - component: {fileID: 8522909862431145462}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -851,7 +851,7 @@ GameObject:
   - component: {fileID: 2551848441921764969}
   - component: {fileID: 303408420}
   - component: {fileID: 303408419}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HandOpen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -979,7 +979,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5020883942686449115}
   - component: {fileID: 5335874515424218507}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EyeWhiteL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1058,7 +1058,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7488740021346770758}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1090,7 +1090,7 @@ GameObject:
   m_Component:
   - component: {fileID: 194442240431980581}
   - component: {fileID: 1220076674874767688}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hand1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1170,7 +1170,7 @@ GameObject:
   - component: {fileID: 8621643629547977657}
   - component: {fileID: 2592122029933006286}
   - component: {fileID: 2031341046}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EyeR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1262,7 +1262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2716396409494044566}
   - component: {fileID: 4657767242200326690}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1342,7 +1342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 994602167279124781}
   - component: {fileID: 6082042105939081527}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1422,7 +1422,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2409702396299141906}
   - component: {fileID: 2994284389353858291}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EyesClosed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1501,7 +1501,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7959124904090924728}
   - component: {fileID: 3272989993251187959}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arm1Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}

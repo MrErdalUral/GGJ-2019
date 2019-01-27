@@ -83,7 +83,7 @@ Material:
     - _Octaves: 6
     - _Parallax: 0.02
     - _Persistance: 0.6
-    - _Saturation: 0.15
+    - _Saturation: 0.1
     - _Scale: -0.2
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1

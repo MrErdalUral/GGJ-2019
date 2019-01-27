@@ -14,7 +14,6 @@ public class ImageSetter : MonoBehaviour
 
     public void SetImageSprite(Sprite sprite)
     {
-        Logger.Instance.Log($"Set sprite to {sprite.name}");
         CanvasImage.sprite = sprite;
         CanvasImage.type = Image.Type.Simple;
         CanvasImage.color = Color.white;
@@ -22,7 +21,6 @@ public class ImageSetter : MonoBehaviour
 
     public void ResetImageSprite()
     {
-        Logger.Instance.Log("Reset sprite");
         CanvasImage.sprite = null;
         CanvasImage.color = Color.clear;
     }
