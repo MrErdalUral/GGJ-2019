@@ -1,9 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class DealDamage : MonoBehaviour
+public class BossDealDamage : MonoBehaviour
 {
     public int DamageAmount;
     public float ShakeMultiplier;
@@ -23,19 +22,15 @@ public class DealDamage : MonoBehaviour
 
         other.gameObject.GetComponent<Health>().DealDamage(DamageAmount);
         var otherBody = other.GetComponent<Rigidbody2D>();
-        var body = GetComponent<Rigidbody2D>();
-        if (!otherBody || !body
-                       || _damageHistory.Contains(otherBody)) return;
+        if (!otherBody) return;
 
-        _damageHistory.Add(otherBody);
+        //_damageHistory.Add(otherBody);
 
-        otherBody.velocity = body.velocity * 2.5f;
-        if (otherBody.velocity.Approx(Vector2.zero))
-            otherBody.velocity = otherBody.transform.position - body.transform.position;
+        otherBody.velocity = otherBody.transform.position - transform.position;
 
         //print($"{name} hits {otherBody.name}. velocity={otherBody.velocity}");
 
-        CameraShake.Shake(this, DamageAmount * ShakeMultiplier, .1f, otherBody.velocity.normalized);
+        CameraShake.Shake(this, 2, .1f, otherBody.velocity.normalized);
         if (DestroyOnHit)
             Destroy();
     }

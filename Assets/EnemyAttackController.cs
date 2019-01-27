@@ -25,8 +25,10 @@ public class EnemyAttackController : MonoBehaviour
     {
         _attackCooldown -= Time.deltaTime;
         if(_attackCooldown > 0) return;
+        var playerObject = GameObject.FindGameObjectWithTag("Player");
+        if(!playerObject) return;
         _enemyAttack.AttackDirection =
-            GameObject.FindGameObjectWithTag("Player").transform.position - transform.position;
+            playerObject.transform.position - transform.position;
         if (AttackRange > _enemyAttack.AttackDirection.magnitude)
         {
             StartCoroutine(AttackRoutine());

@@ -22,6 +22,7 @@ public class EnemyMovementController : MonoBehaviour
         if (_cooldown >= 0)
             return;
         var player = GameObject.FindGameObjectWithTag("Player");
+        if(!player) return;
         var dir = (player.transform.position-transform.position).normalized;
         if (MovementType == EnemyMovementType.avoid && AvoidDistance > (GameObject.FindGameObjectWithTag("Player").transform.position-transform.position).magnitude)
         {
