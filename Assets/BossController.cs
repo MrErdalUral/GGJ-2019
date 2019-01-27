@@ -66,8 +66,9 @@ public class BossController : MonoBehaviour
         ResetAttackCooldown();
     }
 
-    private void DoScreenShake()
+    private void AttackImpact()
     {
         CameraShake.Shake(this, 1, .05f, Vector2.down);
+        GetComponent<PlaySound>().Play();
     }
 }

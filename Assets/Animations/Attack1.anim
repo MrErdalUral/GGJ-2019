@@ -2859,7 +2859,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.43333334
-    functionName: DoScreenShake
+    functionName: AttackImpact
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
