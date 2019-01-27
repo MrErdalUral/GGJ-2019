@@ -113,7 +113,7 @@
             {
                 float3 HCV = RGBtoHCV(RGB);
                 float S = HCV.y / (HCV.z + EPSILON);
-                return float3(HCV.x, _Saturation, HCV.z);
+                return float3(HCV.x, HCV.y * _Saturation, HCV.z);
             }
             float3 HSVtoRGB(in float3 HSV)
               {
@@ -123,7 +123,11 @@
 
             float3 mod3(float3 f, float v)
             {
-                return float3(modf(f.r, v), modf(f.g, v), modf(f.b, v));
+                return float3(fmod(f.r, v), fmod(f.g, v), fmod(f.b, v));
+            }
+
+            float random (float2 st) {
+                return frac(sin(dot(st.xy, float2(12.9898, 78.233))) * 43758.5453123);
             }
 
 			half4 frag(v2f output) : COLOR{
@@ -137,8 +141,10 @@
 				float2 p = {(x - _Size.x / 2)  / _Scale + _SinTime[1],
 					(y - _Size.y / 2) / _Scale +_Time[1] };
 
-				float v = Perlin2D(p, _Octaves, _Persistance, _Lacunarity, _OctaveOffset);
-				v = Normalize(v, _Octaves, _Persistance);
+//				float v = Perlin2D(p, _Octaves, _Persistance, _Lacunarity, _OctaveOffset);
+//				v = Normalize(v, _Octaves, _Persistance);
+
+                float v = random(output.uv) + (_SinTime[1]);
 
 				fixed4 temp = lerp(col1, col2, v);
 				fixed4 result1 = lerp(col1, temp, _Blend);
@@ -146,11 +152,11 @@
 				fixed4 result = lerp(result1, result2, _Blend);
 
 //                float hue = RGBtoHue(result) + _Time[0];
-                float3 hsv = RGBtoHSV(result) + _Time[0];
-                hsv = float3(fmod(hsv.r, 1), hsv.g, hsv.b);
+                float3 hsv = RGBtoHSV(result);
+                hsv = float3(fmod(hsv.r + _Time[0], 1), _Saturation, hsv.b);
 
-				result = fixed4(HSVtoRGB(sin(hsv * 6) / 2 + .5), result.a);
-//				result = fixed4(HSVtoRGB(fmod(hue, 1)), result.a);
+				result = fixed4(HSVtoRGB(sin(hsv * (_SinTime[2]*4 + 20)) / 2 + .5), result.a);
+//  			  result = fixed4(HSVtoRGB(fmod(hue, 1)), result.a);
 
 				return result;
 			}
