@@ -8,11 +8,18 @@ public class BossController : MonoBehaviour
     private Animator _animator;
     private float _attackCooldown;
     public float AttackCooldownTime = 10f;
+    public int BossHealth = 20;
 
     // Start is called before the first frame update
     void Awake()
     {
         _animator = GetComponent<Animator>();
+        ResetAttackCooldown();
+    }
+
+    private void ResetAttackCooldown()
+    {
+        AttackCooldownTime = Mathf.Lerp(1, 10f, (20f - BossHealth) / 20);
         _attackCooldown = AttackCooldownTime;
     }
 
@@ -56,7 +63,7 @@ public class BossController : MonoBehaviour
             default:
                 break;
         }
-        _attackCooldown = AttackCooldownTime;
+        ResetAttackCooldown();
     }
 
     private void DoScreenShake()
