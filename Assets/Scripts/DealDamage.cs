@@ -35,6 +35,9 @@ public class DealDamage : MonoBehaviour
 
         //print($"{name} hits {otherBody.name}. velocity={otherBody.velocity}");
 
+        if (transform.parent.CompareTag("Player"))
+            GetComponentInParent<PlaySound>().Play();
+
         CameraShake.Shake(this, DamageAmount * ShakeMultiplier, .05f, otherBody.velocity.normalized);
         if (DestroyOnHit)
             Destroy();

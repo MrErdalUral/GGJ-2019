@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 155258991338057862}
   - component: {fileID: 1225606599}
   - component: {fileID: 1225606590}
+  - component: {fileID: 7830465089876980405}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -376,3 +377,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74b49950d92761d44964d8265cfe6b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7830465089876980405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4952595241886734032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32d9cc5428974446a548b610ac0ac444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clips:
+  - {fileID: 8300000, guid: 96ba267bec126694e8feb98535c18b49, type: 3}
+  - {fileID: 8300000, guid: 56c77b9663ef2a64787f5e488ad597bb, type: 3}
+  - {fileID: 8300000, guid: 314547933b8bc344db06c0d90da53337, type: 3}
+  PitchRandomizer: {x: 0, y: 0.1}

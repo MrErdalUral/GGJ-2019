@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public static class Extensions
@@ -26,4 +27,16 @@ public static class Extensions
         var component = self.GetComponentInChildren<T>();
         return component == null ? self.AddComponent<T>() : component;
     }
+
+    public static float Random(this Vector2 v) => UnityEngine.Random.Range(v.x, v.y);
+
+    public static T Random<T>(this T[] array)
+    {
+        if (array == null)
+            throw new ArgumentNullException(nameof(array));
+        if (array.Length == 0)
+            throw new ArgumentException("Collection must not be empty.");
+
+        return array[UnityEngine.Random.Range(0, array.Length)];
+}
 }

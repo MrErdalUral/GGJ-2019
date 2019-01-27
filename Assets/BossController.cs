@@ -71,4 +71,9 @@ public class BossController : MonoBehaviour
         CameraShake.Shake(this, 1, .05f, Vector2.down);
         GetComponent<PlaySound>().Play();
     }
+
+    private void HandSlide(AudioClip clip)
+    {
+        GetComponent<PlaySound>().Play(clip);
+    }
 }
