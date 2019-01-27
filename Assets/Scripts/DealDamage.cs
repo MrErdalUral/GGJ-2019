@@ -35,7 +35,7 @@ public class DealDamage : MonoBehaviour
 
         //print($"{name} hits {otherBody.name}. velocity={otherBody.velocity}");
 
-        CameraShake.Shake(this, DamageAmount * ShakeMultiplier, .1f, otherBody.velocity.normalized);
+        CameraShake.Shake(this, DamageAmount * ShakeMultiplier, .05f, otherBody.velocity.normalized);
         if (DestroyOnHit)
             Destroy();
     }
