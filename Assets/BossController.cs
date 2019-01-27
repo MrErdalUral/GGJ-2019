@@ -38,10 +38,9 @@ public class BossController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        var otherLayer = 1 << other.gameObject.layer;
-
         var damage = other.GetComponent<DealDamage>();
-        if ((otherLayer & damage.DamageLayer) != otherLayer) return;
+        var layer = 1 << gameObject.layer;
+        if ((layer & damage.DamageLayer) != layer) return;
 
         BossHealth -= damage.DamageAmount;
 
