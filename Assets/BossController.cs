@@ -19,7 +19,7 @@ public class BossController : MonoBehaviour
 
     private void ResetAttackCooldown()
     {
-        AttackCooldownTime = Mathf.Lerp(1, 10f, (20f - BossHealth) / 20);
+        AttackCooldownTime = Mathf.Lerp(1, 10f, (float)BossHealth / 20);
         _attackCooldown = AttackCooldownTime;
     }
 

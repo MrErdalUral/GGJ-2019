@@ -10,7 +10,7 @@ namespace Assets.Input_Handlers
         public string VerticalInput;
         void Update()
         {
-            VectorAction.Invoke(new Vector2(Input.GetAxisRaw(HorizontalInput), Input.GetAxisRaw(VerticalInput)).normalized);
+            VectorAction.Invoke(new Vector2(Input.GetAxisRaw(HorizontalInput), Input.GetAxisRaw(VerticalInput)));
         }
     }
 }
